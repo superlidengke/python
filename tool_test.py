@@ -2,6 +2,7 @@
 
 import unittest
 from CutImageFromVideo import CutImageFromVideo
+from DetectFaces import DetectFace
 
 class TestClient(unittest.TestCase):
 
@@ -10,3 +11,9 @@ class TestClient(unittest.TestCase):
         imageDest = "C:/temp/video/images/"
         cut = CutImageFromVideo()
         cut.extract(sourceVideo,imageDest,60,60)
+
+    def test_detect_face(self):
+        detect = DetectFace()
+        imagePath = r'C:\temp\video\faces\frame008.jpg'
+        desti = r'C:\temp\video\faces\faces/'
+        detect.detct_face_save(imagePath,desti)
